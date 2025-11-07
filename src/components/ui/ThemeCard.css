@@ -1,0 +1,124 @@
+.theme-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  min-height: 135px;
+  width: 160px;
+}
+
+.theme-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 109, 181, 0.2);
+}
+
+.theme-card:active {
+  transform: translateY(-2px);
+}
+
+.theme-card-icon-container {
+  background-color: transparent;
+  border-radius: var(--radius-sm);
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-xs);
+}
+
+.theme-card-image {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+}
+
+.theme-card-icon {
+  font-size: 40px;
+}
+
+.theme-card-lucide-icon {
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-card-title {
+  color: var(--color-primary);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-break: break-word;
+}
+
+/* Barre de progression dans la carte */
+.theme-card-progress {
+  width: 100%;
+  margin-top: var(--spacing-xs);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.theme-progress-track {
+  background-color: rgba(217, 217, 217, 0.3);
+  border-radius: 3px;
+  height: 4px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.theme-progress-filled {
+  background-color: var(--color-primary);
+  border-radius: 3px;
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.theme-progress-label {
+  color: var(--color-primary);
+  font-family: var(--font-family);
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ==================== DARK MODE ==================== */
+body.dark-mode .theme-card {
+  background-color: #1D1D1D;
+  border: 1px solid #2A2A2A;
+}
+
+body.dark-mode .theme-card:hover {
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+body.dark-mode .theme-card-lucide-icon {
+  color: #667eea;
+}
+
+body.dark-mode .theme-card-title {
+  color: #667eea;
+}
+
+body.dark-mode .theme-progress-track {
+  background-color: #2A2A2A;
+}
+
+body.dark-mode .theme-progress-label {
+  color: #667eea;
+}
+

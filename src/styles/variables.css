@@ -1,0 +1,55 @@
+/* Variables de design LibertyLoc */
+
+:root {
+  /* Couleurs principales */
+  --color-primary: #006db5;
+  --color-primary-light: #3fc9ff;
+  --color-text-dark: #0f0f0f;
+  --color-text-light: #ffffff;
+  --color-text-muted: #757575;
+  
+  /* Backgrounds */
+  --bg-gradient-blue: linear-gradient(
+    185deg,
+    rgba(0, 108, 181, 1) 0%,
+    rgba(63, 200, 255, 1) 100%
+  );
+  --bg-gradient-light: linear-gradient(
+    185deg,
+    rgba(253, 252, 255, 1) 0%,
+    rgba(251, 250, 255, 0.85) 100%
+  );
+  --bg-card: #efeeee;
+  --bg-white: #ffffff;
+  --bg-progress: linear-gradient(
+    109deg,
+    rgba(0, 109, 181, 1) 0%,
+    rgba(63, 201, 255, 1) 100%
+  );
+  
+  /* Rayons de bordure */
+  --radius-sm: 20px;
+  --radius-md: 25px;
+  --radius-lg: 50px;
+  
+  /* Espacement */
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* Typographie */
+  --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  --font-size-sm: 13px;
+  --font-size-base: 15px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  
+  /* Layout mobile */
+  --mobile-width: 430px;
+  --mobile-height: 932px;
+}

@@ -1,0 +1,601 @@
+.student-profile {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  padding-bottom: 80px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-top: 10px;
+}
+
+.back-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-4px);
+}
+
+.profile-title {
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Loading et Error states */
+.profile-loading,
+.profile-error {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+/* Cards */
+.profile-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.card-title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #667eea;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Informations du compte */
+.profile-info {
+  padding: 0;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.info-row:last-of-type {
+  border-bottom: none;
+}
+
+.info-row.highlight {
+  background: #f8f9ff;
+}
+
+.info-label {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.info-value {
+  color: #1a1a1a;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.days-remaining {
+  font-size: 18px;
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+
+.days-remaining.green {
+  background: #d4edda;
+  color: #155724;
+}
+
+.days-remaining.orange {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.days-remaining.red {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.account-status {
+  padding: 16px 20px;
+  border-left: 4px solid;
+  margin-top: 10px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.status-badge.green {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-badge.orange {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.red {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Statistiques globales */
+.stats-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: #f8f9ff;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+.stat-item:hover {
+  transform: translateX(4px);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.stat-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.stat-value {
+  color: #1a1a1a;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Barres de progression */
+.progress-bar-container {
+  padding: 16px;
+  background: #f8f9ff;
+  border-radius: 12px;
+}
+
+.progress-bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.progress-label {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.progress-percentage {
+  color: #667eea;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 6px;
+  transition: width 0.8s ease;
+}
+
+.progress-fill.accuracy {
+  background: linear-gradient(90deg, #48bb78, #38a169);
+}
+
+/* Examens blancs */
+.exam-stats {
+  padding: 0;
+}
+
+.exam-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.exam-stat-row:last-child {
+  border-bottom: none;
+}
+
+.exam-stat-row.highlight {
+  background: #f8f9ff;
+}
+
+.exam-label {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.exam-value {
+  color: #1a1a1a;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.best-score {
+  color: #48bb78;
+}
+
+.average-score {
+  color: #667eea;
+}
+
+/* 🔥 Statistiques par thème */
+.theme-stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.theme-stat-item {
+  background: #f8f9ff;
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.theme-stat-item:hover {
+  background: #f0f2ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.theme-stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.theme-stat-title {
+  color: #1a1a1a;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.theme-stat-badge {
+  background: #667eea;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.theme-stat-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.theme-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme-stat-label {
+  color: #666;
+  font-size: 14px;
+}
+
+.theme-stat-value {
+  color: #1a1a1a;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.theme-stat-value.success {
+  color: #48bb78;
+}
+
+.theme-stat-value.warning {
+  color: #ed8936;
+}
+
+.theme-stat-value.danger {
+  color: #f56565;
+}
+
+.theme-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.theme-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.no-data {
+  text-align: center;
+  color: #999;
+  padding: 24px;
+  font-style: italic;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-row {
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 8px;
+}
+
+.theme-toggle-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.theme-toggle-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.theme-toggle-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .student-profile {
+    padding: 16px;
+  }
+
+  .profile-title {
+    font-size: 24px;
+  }
+
+  .stat-value {
+    font-size: 20px;
+  }
+}
+
+/* ==================== DARK MODE ==================== */
+body.dark-mode .student-profile {
+  background: #0F0F0F;
+}
+
+body.dark-mode .profile-loading,
+body.dark-mode .profile-error {
+  background: #0F0F0F;
+}
+
+body.dark-mode .loading-spinner {
+  border-color: #2A2A2A;
+  border-top-color: #667eea;
+}
+
+body.dark-mode .profile-card {
+  background: #1D1D1D;
+  border: 1px solid #2A2A2A;
+}
+
+body.dark-mode .card-title-with-icon {
+  color: #667eea;
+}
+
+body.dark-mode .info-row {
+  border-bottom-color: #2A2A2A;
+}
+
+body.dark-mode .info-row.highlight {
+  background: #252525;
+}
+
+body.dark-mode .info-label {
+  color: #A0A0A0;
+}
+
+body.dark-mode .info-value {
+  color: #F5F5F5;
+}
+
+body.dark-mode .theme-toggle-row {
+  border-top-color: #2A2A2A;
+}
+
+body.dark-mode .stat-item {
+  background: #252525;
+}
+
+body.dark-mode .stat-label {
+  color: #A0A0A0;
+}
+
+body.dark-mode .stat-value {
+  color: #F5F5F5;
+}
+
+body.dark-mode .progress-bar-container {
+  background: #252525;
+}
+
+body.dark-mode .progress-label {
+  color: #A0A0A0;
+}
+
+body.dark-mode .progress-bar {
+  background: #2A2A2A;
+}
+
+body.dark-mode .exam-stat-row {
+  border-bottom-color: #2A2A2A;
+}
+
+body.dark-mode .exam-stat-row.highlight {
+  background: #252525;
+}
+
+body.dark-mode .exam-label {
+  color: #A0A0A0;
+}
+
+body.dark-mode .exam-value {
+  color: #F5F5F5;
+}
+
+body.dark-mode .theme-stat-item {
+  background: #252525;
+}
+
+body.dark-mode .theme-stat-item:hover {
+  background: #2A2A2A;
+}
+
+body.dark-mode .theme-stat-title {
+  color: #F5F5F5;
+}
+
+body.dark-mode .theme-stat-label {
+  color: #A0A0A0;
+}
+
+body.dark-mode .theme-stat-value {
+  color: #F5F5F5;
+}
+
+body.dark-mode .theme-progress-bar {
+  background: #2A2A2A;
+}
+
+body.dark-mode .no-data {
+  color: #A0A0A0;
+}
+
+body.dark-mode .back-button {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Days Remaining Badge */
+body.dark-mode .days-remaining {
+  font-size: 18px;
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+
+body.dark-mode .days-remaining.green {
+  background: rgba(34, 197, 94, 0.25);
+  color: #22c55e;
+}
+
+body.dark-mode .days-remaining.orange {
+  background: rgba(251, 146, 60, 0.25);
+  color: #fb923c;
+}
+
+body.dark-mode .days-remaining.red {
+  background: rgba(239, 68, 68, 0.25);
+  color: #ef4444;
+}
+
+
