@@ -3,8 +3,9 @@ import { useAuth } from '../hooks';
 import { Loader2, AlertCircle } from 'lucide-react';
 import './LoginScreen.css';
 import DiscoverScreen from './DiscoverScreen';
+import ForgotPasswordScreen from './ForgotPasswordScreen';
 
-type ScreenView = 'welcome' | 'login' | 'discover';
+type ScreenView = 'welcome' | 'login' | 'discover' | 'forgot-password';
 
 export default function LoginScreen() {
   const { login } = useAuth();
@@ -42,6 +43,15 @@ export default function LoginScreen() {
 
   if (currentView === 'discover') {
     return <DiscoverScreen onBack={() => setCurrentView('welcome')} />;
+  }
+
+  if (currentView === 'forgot-password') {
+    return (
+      <ForgotPasswordScreen
+        onBack={() => setCurrentView('login')}
+        initialEmail={email}
+      />
+    );
   }
 
   if (currentView === 'welcome') {
@@ -140,6 +150,14 @@ export default function LoginScreen() {
             ) : (
               'Se connecter'
             )}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setCurrentView('forgot-password')}
+            className="forgot-password-link"
+          >
+            Mot de passe oublié ?
           </button>
 
           <button

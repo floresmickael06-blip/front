@@ -4,6 +4,7 @@ export { default as themeService } from './theme.service';
 export { default as mockExamService } from './mockExam.service';
 export { default as progressService } from './progress.service';
 export { default as userService } from './user.service'; // 🔥 Nouveau service pour la gestion des utilisateurs (Admin)
+export { default as passwordResetService } from './passwordReset.service'; // 🔥 Service de réinitialisation de mot de passe
 
 // ❌ Services obsolètes (à supprimer après migration complète)
 // export { default as categoryService } from './category.service';
